@@ -1,0 +1,23 @@
+{
+  "name": "apicalculadora",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://github.com/joaogabriel-web/APICalculadora#readme",
+  "bugs": {
+    "url": "https://github.com/joaogabriel-web/APICalculadora/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaogabriel-web/APICalculadora.git"
+  },
+  "license": "ISC",
+  "author": "joao g",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
