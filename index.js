@@ -5,27 +5,53 @@ const app = express()
 
 app.use(express.json);
 
-app.get("/api/matematica/:num2/:num2", (req, res) => {
+app.get("/api/calculadora", (req, res) => {
     
     res.send({ menssage: "Operaçoes: Subtraçao, soma, multiplicaçao, divisao, raiz e potencia" });
 })
 
-app.post("/api/opracoes/num1/num2", (req, res) => {
+app.post("/api/calculadora/soma/num1/num2", (req, res) => {
+    const num1 = res.body.num1
+    const num2 = res.body.num2
+
+    const resp1 = num1 + num2
+
+    res.send({ menssage: resp1 })
+})
+
+app.post("/api/calculadora/sub/num1/num2", (req, res) => {
     const num1 = res.body.num1
     const num2 = res.body.num2
 
     const resp1 = num1 - num2
-    const resp2 = num1 + num2
-    const resp3 = num1 * num2
-    const resp4 = num1 / num2
-    const resp5 = num1^2
-    
 
-    res.send({ menssage: resp1,
-        menssage: resp2,
-        menssage: resp3,
-        menssage: resp4
-    })
+    res.send({ menssage: resp1 })
+})
+
+app.post("/api/calculadora/mult/num1/num2", (req, res) => {
+    const num1 = res.body.num1
+    const num2 = res.body.num2
+
+    const resp1 = num1 * num2
+
+    res.send({ menssage: resp1 })
+})
+
+app.post("/api/calculadora/div/num1/num2", (req, res) => {
+    const num1 = res.body.num1
+    const num2 = res.body.num2
+
+    const resp1 = num1 / num2
+
+    res.send({ menssage: resp1 })
+})
+
+app.post("/api/calculadora/raiz/num1/num2", (req, res) => {
+    const num1 = res.body.num1
+
+    const resp1 = (num1 ^ 2) / 3.14
+
+    res.send({ menssage: resp1 })
 })
 
 app.listen(3000, () => { 
