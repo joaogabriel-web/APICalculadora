@@ -1,9 +1,8 @@
 import express from 'express'
-import { listen } from 'node:quic';
 
 const app = express()
 
-app.use(express.json);
+app.use(express.json());
 
 app.get("/api/calculadora", (req, res) => {
     
@@ -11,8 +10,8 @@ app.get("/api/calculadora", (req, res) => {
 })
 
 app.post("/api/calculadora/soma/num1/num2", (req, res) => {
-    const num1 = res.body.num1
-    const num2 = res.body.num2
+    const num1 = req.body.num1
+    const num2 = req.body.num2
 
     const resp1 = num1 + num2
 
@@ -20,8 +19,8 @@ app.post("/api/calculadora/soma/num1/num2", (req, res) => {
 })
 
 app.post("/api/calculadora/sub/num1/num2", (req, res) => {
-    const num1 = res.body.num1
-    const num2 = res.body.num2
+    const num1 = req.body.num1
+    const num2 = req.body.num2
 
     const resp1 = num1 - num2
 
@@ -29,8 +28,8 @@ app.post("/api/calculadora/sub/num1/num2", (req, res) => {
 })
 
 app.post("/api/calculadora/mult/num1/num2", (req, res) => {
-    const num1 = res.body.num1
-    const num2 = res.body.num2
+    const num1 = req.body.num1
+    const num2 = req.body.num2
 
     const resp1 = num1 * num2
 
@@ -38,8 +37,8 @@ app.post("/api/calculadora/mult/num1/num2", (req, res) => {
 })
 
 app.post("/api/calculadora/div/num1/num2", (req, res) => {
-    const num1 = res.body.num1
-    const num2 = res.body.num2
+    const num1 = req.body.num1
+    const num2 = req.body.num2
 
     const resp1 = num1 / num2
 
@@ -47,7 +46,7 @@ app.post("/api/calculadora/div/num1/num2", (req, res) => {
 })
 
 app.post("/api/calculadora/raiz/num1/num2", (req, res) => {
-    const num1 = res.body.num1
+    const num1 = req.body.num1
 
     const resp1 = (num1 ^ 2) / 3.14
 
